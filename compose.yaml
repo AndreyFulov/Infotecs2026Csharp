@@ -1,0 +1,8 @@
+﻿services:
+  infotecstestapplication:
+    image: infotecstestapplication
+    build:
+      context: .
+      dockerfile: InfotecsTestApplication/Dockerfile
+
+

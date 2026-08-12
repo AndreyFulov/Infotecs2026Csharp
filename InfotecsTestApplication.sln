@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfotecsTestApplication", "InfotecsTestApplication\InfotecsTestApplication.csproj", "{B88604FE-115E-476D-BBA8-C472DF5B43B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FA5F06D6-8C47-41A9-A4BA-9A58360B879E}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B88604FE-115E-476D-BBA8-C472DF5B43B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B88604FE-115E-476D-BBA8-C472DF5B43B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B88604FE-115E-476D-BBA8-C472DF5B43B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B88604FE-115E-476D-BBA8-C472DF5B43B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
