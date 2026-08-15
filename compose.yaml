@@ -1,19 +1,18 @@
 ﻿services:
-#  infotecstestapplication:
-#    image: infotecstestapplication
-#    build:
-#      context: .
-#      dockerfile: InfotecsTestApplication/Dockerfile
+
   postgres:
     image: postgres:17
     container_name: infotecs-postgres
     restart: unless-stopped
+
     environment:
-      POSTGRES_DB: infotecs
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
     ports:
-      - "5432:5432"
+      - "${POSTGRES_PORT}:5432"
+
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
@@ -22,13 +21,58 @@
     image: dpage/pgadmin4
     container_name: infotecs-pgadmin
     restart: unless-stopped
+
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+
     ports:
-      - "5050:80"
+      - "${PGADMIN_PORT}:80"
+
     depends_on:
       - postgres
+
+
+  api:
+    container_name: infotecs-api
+    build:
+      context: .
+      dockerfile: InfotecsTestApplication/Dockerfile
+
+    restart: unless-stopped
+
+    environment:
+      ASPNETCORE_URLS: http://+:8080
+
+      ConnectionStrings__DefaultConnection: >-
+        Host=postgres;
+        Port=5432;
+        Database=${POSTGRES_DB};
+        Username=${POSTGRES_USER};
+        Password=${POSTGRES_PASSWORD}
+
+    ports:
+      - "${API_PORT}:8080"
+
+    depends_on:
+      - postgres
+
+
+  frontend:
+    container_name: infotecs-frontend
+
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+
+    restart: unless-stopped
+
+    ports:
+      - "${FRONTEND_PORT}:80"
+
+    depends_on:
+      - api
+
 
 volumes:
   postgres_data:

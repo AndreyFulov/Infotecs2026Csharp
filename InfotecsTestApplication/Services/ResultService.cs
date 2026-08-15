@@ -43,16 +43,20 @@ public class ResultService : IResultService
     {
         var query = _dbContext.Results.AsQueryable();
 
-        if (filter.DateFrom.HasValue)
+        if (filter.name != null)
+        {
+            query = query.Where(x => x.Name.Contains(filter.name));
+        }
+        if (filter.dateFrom.HasValue)
         {
             query = query.Where(x =>
-                x.StartedAt >= filter.DateFrom.Value);
+                x.StartedAt >= filter.dateFrom.Value);
         }
 
-        if (filter.DateTo.HasValue)
+        if (filter.dateTo.HasValue)
         {
             query = query.Where(x =>
-                x.StartedAt <= filter.DateTo.Value);
+                x.StartedAt <= filter.dateTo.Value);
         }
 
         if (filter.valueFrom.HasValue)

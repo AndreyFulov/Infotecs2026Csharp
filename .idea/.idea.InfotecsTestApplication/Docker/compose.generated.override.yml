@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  api:
+    build:
+      context: "/Users/fulovplay/RiderProjects/InfotecsTestApplication"
+      dockerfile: "InfotecsTestApplication/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/InfotecsTestApplication.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "infotecstestapplication:dev"
+    ports: []
+    volumes:
+    - "/Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication:/app:rw"
+    - "/Users/fulovplay/RiderProjects/InfotecsTestApplication:/src:rw"
+    - "/Users/fulovplay/.nuget/packages:/root/.nuget/packages"
+    working_dir: "/app"
