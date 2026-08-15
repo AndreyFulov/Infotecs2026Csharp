@@ -1,10 +1,25 @@
+using InfotecsTestApplication.Data;
+using InfotecsTestApplication.Exceptions;
+using InfotecsTestApplication.Services;
+using InfotecsTestApplication.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
+
+builder.Services.AddDbContext<AppDbContext>(options => 
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddScoped<IValuesService, ValuesService>();
+builder.Services.AddScoped<IFileProcessingService, FileProcessing>();
+builder.Services.AddScoped<IResultService, ResultService>();
 builder.Services.AddSwaggerGen();
+
 
 var app = builder.Build();
 
@@ -16,7 +31,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseExceptionHandler();
 app.MapControllers();
 app.Run();
 

@@ -19,11 +19,6 @@
 /Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/obj/Debug/net8.0/InfotecsTestApplication.MvcApplicationPartsAssemblyInfo.cache
 /Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/obj/Debug/net8.0/staticwebassets.build.json
 /Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/obj/Debug/net8.0/staticwebassets.development.json
-/Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/obj/Debug/net8.0/staticwebassets/msbuild.InfotecsTestApplication.Microsoft.AspNetCore.StaticWebAssets.props
-/Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/obj/Debug/net8.0/staticwebassets/msbuild.build.InfotecsTestApplication.props
-/Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.InfotecsTestApplication.props
-/Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.InfotecsTestApplication.props
-/Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/obj/Debug/net8.0/staticwebassets.pack.json
 /Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/obj/Debug/net8.0/scopedcss/bundle/InfotecsTestApplication.styles.css
 /Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/obj/Debug/net8.0/Infotecs.E12618D8.Up2Date
 /Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/obj/Debug/net8.0/InfotecsTestApplication.dll
@@ -109,3 +104,10 @@
 /Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/bin/Debug/net8.0/CsvHelper.dll
+/Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/obj/Debug/net8.0/InfotecsTestApplication.sourcelink.json
+/Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/obj/Debug/net8.0/staticwebassets/msbuild.InfotecsTestApplication.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/obj/Debug/net8.0/staticwebassets/msbuild.build.InfotecsTestApplication.props
+/Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.InfotecsTestApplication.props
+/Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.InfotecsTestApplication.props
+/Users/fulovplay/RiderProjects/InfotecsTestApplication/InfotecsTestApplication/obj/Debug/net8.0/staticwebassets.pack.json

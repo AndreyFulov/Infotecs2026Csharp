@@ -5,6 +5,7 @@ using InfotecsTestApplication.DTO;
 using InfotecsTestApplication.Exceptions;
 using InfotecsTestApplication.Models.Entity;
 using InfotecsTestApplication.Services.Interfaces;
+using InfotecsTestApplication.Utils;
 
 namespace InfotecsTestApplication.Services;
 
@@ -50,8 +51,8 @@ public class FileProcessing : IFileProcessingService
         return results;
     }
 
-    public async Task ValidateNewData(List<ValueModel> results)
+    public void ValidateNewData(List<ValueModel> results)
     {
-        _fileProcessingServiceImplementation.ValidateNewData(results);
+        ValueValidator.ValidateNewData(results);
     }
 }

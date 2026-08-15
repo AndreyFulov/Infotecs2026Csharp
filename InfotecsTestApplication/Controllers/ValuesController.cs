@@ -1,3 +1,4 @@
+using InfotecsTestApplication.Models.Entity;
 using InfotecsTestApplication.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,9 +14,10 @@ public class ValuesController : ControllerBase
         _valuesService = valuesService;
     }
     [HttpGet]
-    public IActionResult GetValues()
+    public async Task<ActionResult<List<ValueModel>>> GetValues([FromQuery]string file)
     {
-        return Ok("Hello World!");
+        var result = await _valuesService.GetValuesFromFile(file);
+        return Ok(result);
     }
 
     [HttpPost("upload")]

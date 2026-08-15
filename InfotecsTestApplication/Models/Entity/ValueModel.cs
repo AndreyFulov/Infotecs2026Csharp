@@ -6,5 +6,7 @@ public class ValueModel
     public DateTimeOffset Date { get; set; }
     public double ExecutionTime { get; set; }
     public double Value { get; set; }
+    public long ResultId { get; set; }
+    public ResultModel Result { get; set; }
     
 }

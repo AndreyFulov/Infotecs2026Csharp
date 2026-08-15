@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
 
 namespace InfotecsTestApplication.Exceptions;
 
@@ -9,10 +10,23 @@ public class GlobalExceptionHandler : IExceptionHandler
     {
         _logger = logger;
     }
-    public ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
+    public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
     {
         _logger.LogError(exception.Message);
-        var statusCode = httpContext.Response.StatusCode;
-        return ValueTask.FromResult(statusCode >= 400);
+        if (exception is InvalidCsvException)
+        {
+            httpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
+            await httpContext.Response.WriteAsJsonAsync(
+                new ProblemDetails
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                    Title = "Validation error",
+                    Detail = exception.Message
+                },
+                cancellationToken
+            );
+            return true;
+        }
+        return false;
     }
 }
