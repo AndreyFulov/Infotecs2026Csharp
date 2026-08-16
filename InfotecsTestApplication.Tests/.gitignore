@@ -1,0 +1,22 @@
+# .NET build
+**/bin/
+**/obj/
+
+# Test results
+**/TestResults/
+**/*.trx
+
+# Coverage
+**/coverage/
+**/coverage.opencover.xml
+**/coverage.cobertura.xml
+
+# Rider
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store

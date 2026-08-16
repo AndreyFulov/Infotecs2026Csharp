@@ -23,7 +23,15 @@ RUN dotnet build "InfotecsTestApplication.csproj" \
     -o /app/build
 
 
-FROM build AS publish
+FROM build AS test
+WORKDIR "src/InfotecsTestApplication.Tests"
+RUN dotnet test "InfotecsTestApplication.Tests.csproj" \
+        -c $BUILD_CONFIGURATION \
+        --no-restore \
+        --no-build \
+        --logger "console;verbosity=normal"
+
+FROM test AS publish
 
 ARG BUILD_CONFIGURATION=Release
 

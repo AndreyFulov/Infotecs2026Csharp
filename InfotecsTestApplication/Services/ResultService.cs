@@ -80,7 +80,7 @@ public class ResultService : IResultService
         if (filter.executionTimeTo.HasValue)
         {
             query = query.Where(x =>
-                x.AverageValue <= filter.executionTimeTo.Value);
+                x.AverageExecutionTime <= filter.executionTimeTo.Value);
         }
 
         return await query.Select(x=>x.ToDto()).ToListAsync();
